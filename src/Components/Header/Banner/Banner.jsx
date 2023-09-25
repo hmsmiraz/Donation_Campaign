@@ -20,7 +20,7 @@ const Banner = () => {
                 placeholder="Search here..."
                 className="input input-bordered lg:w-80"
               />
-              <button className="btn bg-[#FF444A]">
+              <button className="btn bg-[#FF444A] text-white">
                 Search
               </button>
             </div>
