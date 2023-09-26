@@ -11,7 +11,7 @@ const DonationCards = ({ donation }) => {
         style={{ background: card_bg }}
       >
         <figure>
-          <img src={thumbnail} alt="Shoes" />
+          <img src={thumbnail} alt="" />
         </figure>
         <div className="card-body" style={{ color: text_button_bg }}>
           <p
