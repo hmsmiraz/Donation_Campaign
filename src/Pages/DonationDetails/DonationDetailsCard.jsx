@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,7 +21,7 @@ const DonationDetailsCard = ({ donation }) => {
         localStorage.setItem("donations", JSON.stringify(addedDonationsArray));
         toast.success("Donations Add Successfully, Thank You");
       } else {
-        toast.error("Sorry, You can't donate twice")
+        toast.error("Sorry, You can't donate twice");
       }
     }
   };
@@ -63,6 +64,9 @@ const DonationDetailsCard = ({ donation }) => {
         pauseOnHover
         theme="colored"
       />
+      <NavLink to="/" className="flex items-end justify-end">
+        <button className="btn btn-primary mt-2 px-8 absolute  bottom-4">Back Home</button>
+      </NavLink>
     </div>
   );
 };

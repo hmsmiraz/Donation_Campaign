@@ -1,4 +1,19 @@
-const Banner = () => {
+import { useState } from "react";
+import Donations from "../../Donations/Donations";
+
+const Banner = ( ) => { 
+
+  const [text, setText] = useState(null);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(text)
+  };
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div
       className="hero min-h-[160px] lg:min-h-[400px]"
@@ -13,20 +28,21 @@ const Banner = () => {
             I Grow By Helping People In Need
           </h1>
 
-          <div className="form-control">
+          <form className="form-control" onSubmit={handleSearch}>
             <div className="input-group">
               <input
+              onChange={handleTextChange}
                 type="text"
-                placeholder="Search here..."
-                className="input input-bordered lg:w-80"
+                placeholder="Search by Health/Education/Food/Clothing"
+                className= "input border-black lg:w-80 text-black"
               />
-              <button className="btn bg-[#FF444A] text-white">
-                Search
-              </button>
+              <button onClick={handleSearch} className="btn bg-[#FF444A] text-white">Search</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
+      <Donations onButtonClick={handleSearch}></Donations>
+      
     </div>
   );
 };

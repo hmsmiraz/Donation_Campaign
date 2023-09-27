@@ -6,7 +6,6 @@ const Donation = () => {
   const [noDonations, setNoDonations] = useState(false);
 
   const [dataLength, setDataLength] = useState(4);
-  console.log(donations.length);
 
   useEffect(() => {
     const donationsItems = JSON.parse(localStorage.getItem("donations"));
